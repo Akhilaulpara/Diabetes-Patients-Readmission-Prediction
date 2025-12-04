@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Results — Diabetic Readmission</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { background: linear-gradient(135deg,#11998e 0%, #38ef7d 100%); min-height:100vh; padding:30px; font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial; color:#072227; }
+    .card { border-radius:14px; padding:18px; box-shadow:0 10px 30px rgba(2,6,23,0.12); }
+    #fi-wrapper { height:420px; width:100%; position:relative; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="col-lg-11 mx-auto">
+      <div class="card mb-4">
+        <div class="d-flex justify-content-between align-items-start">
+          <div>
+            <h2 class="mb-0">{{ model_name }} Results</h2>
+
+            <!--<p class="mb-0 text-muted">Model Accuracy: <strong>{{ accuracy }}</strong></p>-->
+          </div>
+          <div>
+            <a href="/" class="btn btn-sm btn-outline-dark">← Back</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <div class="card">
+            <h5>Sample Predictions (Top 10)</h5>
+            <div class="table-responsive" style="max-height:380px;">
+              <table class="table table-striped table-sm">
+                <thead>
+                  <tr>
+                    {% for k in rows[0].keys() %}
+                      <th>{{ k }}</th>
+                    {% endfor %}
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for row in rows %}
+                    <tr>
+                      {% for v in row.values() %}
+                        <td {% if loop.index0 == (row|length - 1) %} class="mono" {% endif %}>{{ v }}</td>
+                      {% endfor %}
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="card">
+            <h5>Top Important Features</h5>
+            <div id="fi-wrapper">
+              <canvas id="fiChart"></canvas>
+            </div>
+            <div class="mt-2 text-muted small"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+<script>
+  const fi = JSON.parse(`{{ feature_importance|tojson }}`);
+  const labels = fi.map(x => x.feature);
+  const values = fi.map(x => x.importance);
+
+  const ctx = document.getElementById('fiChart').getContext('2d');
+
+  // Fixed size, non-responsive chart so it stays in place
+  const chart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Importance',
+        data: values,
+        backgroundColor: '#4a00e0'
+      }]
+    },
+    options: {
+      responsive: false,
+      maintainAspectRatio: false,
+      indexAxis: 'y',
+      scales: {
+        x: { beginAtZero: true }
+      },
+      plugins: {
+        legend: { display: true, position: 'top' }
+      }
+    }
+  });
+
+  // ensure canvas size matches wrapper
+  const wrapper = document.getElementById('fi-wrapper');
+  const canvas = document.getElementById('fiChart');
+  canvas.width = wrapper.clientWidth;
+  canvas.height = wrapper.clientHeight;
+  chart.resize();
+</script>
+</body>
+</html>
