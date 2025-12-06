@@ -55,7 +55,7 @@ Majority of patients fall in the **50–80 age group**, highlighting higher chro
 - “Not readmitted” → majority class  
 - “Readmitted < 30 days” → minority class requiring class-imbalance handling  
 
-**⭐ Important Predictors (Random Forest):**
+**⭐ Important Predictors:**
 
 - Number of prior inpatient visits  
 - Number of outpatient visits  
@@ -102,9 +102,12 @@ Key transformations performed:
 
 The following models were trained and compared:
 
-- Logistic Regression  
-- Random Forest Classifier  
-- XGBoost Classifier  
+- Logistic Regression
+- <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/00a5f38b-f5e6-443d-adf3-b9304e516bf7" /> 
+- Random Forest Classifier
+- <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/034824bd-487e-4bd3-b678-4f87882fea2e" />
+- XGBoost Classifier
+- <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/183554d3-c5cd-4f8c-b65d-bf1a936795b3" />
 
 ---
 
