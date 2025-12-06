@@ -102,19 +102,20 @@ Key transformations performed:
 
 The following models were trained and compared:
 
-- Logistic Regression
-- <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/00a5f38b-f5e6-443d-adf3-b9304e516bf7" /> 
-- Random Forest Classifier
-- <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/034824bd-487e-4bd3-b678-4f87882fea2e" />
-- XGBoost Classifier
-- <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/183554d3-c5cd-4f8c-b65d-bf1a936795b3" />
+**Logistic Regression**
+  <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/00a5f38b-f5e6-443d-adf3-b9304e516bf7" /> 
+**Random Forest Classifier**
+  <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/034824bd-487e-4bd3-b678-4f87882fea2e" />
+**XGBoost Classifier**
+  <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/183554d3-c5cd-4f8c-b65d-bf1a936795b3" />
 
 ---
 
 <h3>⭐ Best Performing Models</h3>
 
 - **XGBoost** → highest accuracy  
-- **Random Forest** → most stable & interpretable  
+- **Random Forest** → most stable & interpretable
+  <img width="526" height="120" alt="Image" src="https://github.com/user-attachments/assets/e60f8807-fac8-4ca0-a35f-2b2785d099d5" />
 
 Both models performed well in identifying high-risk patients.
 
