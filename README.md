@@ -1,3 +1,10 @@
+![Python](https://img.shields.io/badge/-Python-3776AB?logo=python&style=flat-square)
+![XGBoost](https://img.shields.io/badge/-XGBoost-ff6f00?logo=xgboost&style=flat-square)
+![RandomForest](https://img.shields.io/badge/-RandomForest-4B8BBE?logo=scikitlearn&style=flat-square)
+![Logistic Regression](https://img.shields.io/badge/-Logistic%20Regression-2F4F4F?logo=scikitlearn&style=flat-square)
+![Flask](https://img.shields.io/badge/-Flask-000000?logo=flask&logoColor=white&style=flat-square)
+![SMOTE](https://img.shields.io/badge/-SMOTE-FF7F50?logo=python&style=flat-square)
+
 <h2>🩺 Diabetes Patients Readmission Prediction</h2>
 
 A Machine Learning Approach to Predict 30-Day Hospital Readmission Risk
