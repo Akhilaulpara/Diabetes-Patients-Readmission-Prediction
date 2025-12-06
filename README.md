@@ -130,8 +130,8 @@ Both models performed well in identifying high-risk patients.
 
 <h3>📈 Results Summary</h3>
 
-- **Accuracy:** ~85%  
-- **ROC-AUC:** ~0.87  
+- **Accuracy:** ~86%  
+- **ROC-AUC:** ~0.83  
 - **F1-Score:** strong for majority class, significantly improved for minority class after SMOTE  
 - **Interpretability:** insights extracted from feature importance  
 
